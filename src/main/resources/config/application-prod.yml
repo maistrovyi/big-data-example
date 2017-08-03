@@ -1,0 +1,10 @@
+# ===================================================================
+# Spring Boot configuration for the "prod" profile.
+#
+# This configuration overrides the application-prod.yml file.
+# ===================================================================
+
+spring:
+  profiles: prod
+server:
+    port: 8080

@@ -1,0 +1,44 @@
+# ===================================================================
+# Spring Boot configuration for the "dev" profile.
+#
+# This configuration overrides the application-dev.yml file.
+# ===================================================================
+
+spring:
+    profiles: dev
+    devtools:
+        restart:
+            enabled: false
+            livereload:
+                enabled: false
+    data:
+      mongodb:
+        name: tractor
+        net:
+          bindIp: localhost
+          port: 32768
+          setParameter:
+            enableLocalhostAuthBypass: false
+
+logging:
+  level:
+    org.springframework: info
+    org.mongodb: info
+    com.maystrovyy: debug
+    org.apache.spark: info
+  pattern:
+#    file: "%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n"
+#  file: "logs/app.log"
+
+server:
+  port: 8080
+  compression:
+    enabled: true
+    mime-types: text/html,text/xml,text/plain,text/css, application/javascript, application/json
+    min-response-size: 1024
+
+management:
+  port: 8090
+  context-path: /management
+  security:
+    enabled: false
